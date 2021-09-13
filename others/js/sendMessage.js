@@ -1,22 +1,10 @@
 let form = document.querySelector("#form");
+let message = null;
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  let pseudo = document.querySelector("#pseudo");
-  if (pseudo.value == "") {
-    pseudo.focus();
-    alert("Le pseudo ne peut être vide");
-    return;
-  }
-  if (pseudo.value.length > 20) {
-    pseudo.value = null;
-    pseudo.focus();
-    alert("Le pseudo ne peut faire plus de 20 caractère");
-    return;
-  }
-
-  let message = document.querySelector("#msg");
+  message = document.querySelector("#msg");
   if (message.value == "") {
     message.focus();
     alert("Veuillez saisir votre message !");
@@ -29,7 +17,6 @@ form.addEventListener("submit", function (e) {
   }
 
   let jsonSendData = JSON.stringify({
-    pseudo: pseudo.value,
     msg: message.value,
   });
 
@@ -44,6 +31,7 @@ form.addEventListener("submit", function (e) {
 
 function callbackInsert(response) {
   console.log(response);
+  message.value = "";
 }
 
 function fctErrorCallback(error) {

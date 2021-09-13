@@ -36,7 +36,7 @@ function sendRequest(httpMethod, url, params, callback, errorCallback) {
       if (xhr.status === 200 && callback) {
         // Traitement requête réussie
         callback(xhr.responseText);
-      } else if (fctErrorCallback) {
+      } else if (errorCallback) {
         // Erreur
         errorCallback(xhr.responseText);
       }

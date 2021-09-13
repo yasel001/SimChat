@@ -1,11 +1,15 @@
 <?php
 
-require "controllers/controllerChat.php";
+session_start();
+
+require "controllers/controller.php";
 
 if (isset($_GET['action']) && !empty($_GET['action'])) {
     switch ($_GET["action"]) {
         case "listeMsg":
-            recupMessages();
+            if ($_COOKIE['isConnected']) {
+                recupMessages();
+            }
             break;
 
         default:
@@ -15,13 +19,20 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 } else if (isset($_POST['action']) && !empty($_POST['action'])) {
     switch ($_POST["action"]) {
         case "postMessage":
-            controleMsg();
+            if ($_COOKIE['isConnected']) {
+                controleMsg();
+            }
+            break;
+
+        case "connexion":
+            connexion();
             break;
 
         default:
+            echo "Page introuvable";
             http_response_code(404);
             break;
     }
 } else {
-    header('Location: views/chat.php');
+    header('Location: views/home.php');
 }
