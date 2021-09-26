@@ -28,6 +28,10 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
             connexion();
             break;
 
+        case "inscription":
+            inscription();
+            break;
+
         default:
             echo "Page introuvable";
             http_response_code(404);

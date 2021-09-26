@@ -1,9 +1,12 @@
 let affFormConnexion = document.querySelector("#connexion");
 let formulaireConnexion = document.querySelector(".form-connexion");
-let password = null;
 
-affFormConnexion.addEventListener("click", afficherFormulaire);
-function afficherFormulaire() {
+let pseudoConnexion = null;
+let passwordConnexion = null;
+
+affFormConnexion.addEventListener("click", afficherFormulaireConnexion);
+function afficherFormulaireConnexion() {
+  document.title = "SimChat - Connexion";
   formulaireConnexion.style.display = "flex";
   formulaireInscription.style.display = "none";
   affFormConnexion.style.display = "none";
@@ -13,23 +16,23 @@ function afficherFormulaire() {
 formulaireConnexion.addEventListener("submit", seConnecter);
 function seConnecter(event) {
   event.preventDefault();
-  let pseudo = document.querySelector("#pseudoConnexion");
-  if (pseudo.value == "") {
+  pseudoConnexion = document.querySelector("#pseudoConnexion");
+  if (pseudoConnexion.value == "") {
     alert("Le pseudo est vide !");
-    pseudo.focus();
+    pseudoConnexion.focus();
     return;
   }
 
-  password = document.querySelector("#passConnexion");
-  if (password.value == "") {
+  passwordConnexion = document.querySelector("#passConnexion");
+  if (passwordConnexion.value == "") {
     alert("Le mot de passe ne peut être vide !");
-    password.focus();
+    passwordConnexion.focus();
     return;
   }
 
   let jsonData = JSON.stringify({
-    pseudo: pseudo.value,
-    pass: password.value,
+    pseudo: pseudoConnexion.value,
+    pass: passwordConnexion.value,
   });
 
   sendRequest(
@@ -47,7 +50,11 @@ function callbackConnexion(response) {
 }
 
 function errorCallbackConnexion(error) {
+  viderChampsConnexion();
   alert(error);
-  pseudo.value = null;
-  password.value = null;
+}
+
+function viderChampsConnexion() {
+  pseudoConnexion.value = null;
+  passwordConnexion.value = null;
 }

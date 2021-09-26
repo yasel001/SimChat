@@ -31,9 +31,14 @@ form.addEventListener("submit", function (e) {
 
 function callbackInsert(response) {
   console.log(response);
-  message.value = "";
+  viderChamps();
 }
 
 function fctErrorCallback(error) {
   alert(error);
+  viderChamps();
+}
+
+function viderChamps() {
+  message.value = null;
 }

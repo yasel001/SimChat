@@ -27,6 +27,7 @@ function callbackRecup(response) {
 
   const blocMessages = document.querySelector("#container");
   blocMessages.innerHTML = html;
+  // window.scroll(0, 10000);
 }
 
 setInterval(() => {

@@ -20,4 +20,14 @@ class LoginManager
 
         return $tabData;
     }
+
+    public function inscrire(string $pseudo, string $pass)
+    {
+        $query = "INSERT INTO users(pseudo, password) VALUES (?, ?)";
+
+        $request = $this->connection->prepare($query);
+        $request->execute([$pseudo, $pass]);
+
+        return $request->rowCount() !== 0;
+    }
 }
