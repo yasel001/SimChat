@@ -23,7 +23,7 @@
                         </div>
                         <div>
                             <label for="passConnexion">Mot de passe : </label>
-                            <input type="text" name="passConnexion" id="passConnexion">
+                            <input type="password" name="passConnexion" id="passConnexion">
                         </div>
                         <div>
                             <button type="submit">Me connecter</button>
@@ -43,11 +43,11 @@
                         </div>
                         <div>
                             <label for="passInscription">Mot de passe : </label>
-                            <input type="text" name="passInscription" id="passInscription">
+                            <input type="password" name="passInscription" id="passInscription">
                         </div>
                         <div>
                             <label for="passConfirmInscription">Confirmation mot de passe : </label>
-                            <input type="text" name="passConfirmInscription" id="passConfirmInscription">
+                            <input type="password" name="passConfirmInscription" id="passConfirmInscription">
                         </div>
                         <div>
                             <button type="submit">M'inscrire</button>
