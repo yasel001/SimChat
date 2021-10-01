@@ -46,7 +46,7 @@ function seConnecter(event) {
 
 function callbackConnexion(response) {
   console.log(response);
-  location.href = "chat.php";
+  location.href = "index.php?action=afficherChat";
 }
 
 function errorCallbackConnexion(error) {

@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../others/css/styles.css">
-    <title>SimChat - Login</title>
-</head>
-
-<body>
-    <?php if (!isset($_COOKIE['isConnected'])) { ?>
+    <?php
+    ob_start();
+    if (!isset($_COOKIE['isConnected'])) { ?>
         <div class="container container-accueil">
             <div class="connexion">
                 <button id="connexion">Connexion</button>
@@ -57,13 +47,11 @@
             </div>
         </div>
 
-        <script src="../others/js/ajax.js"></script>
-        <script src="../others/js/connexion.js"></script>
-        <script src="../others/js/inscription.js"></script>
+        <script src="others/js/connexion.js"></script>
+        <script src="others/js/inscription.js"></script>
 
     <?php } else {
-        header("Location: chat.php");
-    } ?>
-</body>
-
-</html>
+        header("Location: index.php?action=afficherChat");
+    }
+    $page = ob_get_clean();
+    ?>

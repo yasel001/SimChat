@@ -44,12 +44,12 @@ function sendRequest(httpMethod, url, params, callback, errorCallback) {
   };
 
   if (httpMethod.toUpperCase() === "POST") {
-    xhr.open(httpMethod, "../" + url, true);
+    xhr.open(httpMethod, url, true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.send(params);
   } else {
     url += "?" + params;
-    xhr.open(httpMethod, "../" + url, true);
+    xhr.open(httpMethod, url, true);
     xhr.send(null);
   }
 }

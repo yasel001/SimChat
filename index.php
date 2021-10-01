@@ -1,11 +1,13 @@
 <?php
 
-session_start();
-
 require "controllers/controller.php";
 
 if (isset($_GET['action']) && !empty($_GET['action'])) {
     switch ($_GET["action"]) {
+        case 'afficherChat':
+            afficherChat();
+            break;
+
         case "listeMsg":
             if ($_COOKIE['isConnected']) {
                 recupMessages();
@@ -32,11 +34,15 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
             inscription();
             break;
 
+        case "deconnexion":
+            deconnexion();
+            break;
+
         default:
             echo "Page introuvable";
             http_response_code(404);
             break;
     }
 } else {
-    header('Location: views/home.php');
+    afficherHome();
 }

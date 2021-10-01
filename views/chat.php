@@ -1,38 +1,35 @@
-    <!DOCTYPE html>
-    <html lang="fr">
+<?php
+ob_start();
+if (isset($_COOKIE['isConnected'])) { ?>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../others/css/styles.css">
-        <title>SimChat - Chat</title>
-    </head>
+    <div>
+        <div class="tools espace-bas-blanc">
+            <?= $_SESSION["pseudo"]; ?>
+            <button id="btnDeconnect">Se deconnecter</button>
+        </div>
 
-    <body>
-        <?php if (isset($_COOKIE['isConnected'])) { ?>
+        <br><br>
 
-            <div class="container" id="container">
+        <div class="container" id="container">
 
+        </div>
+    </div>
+
+    <div id="container-btn">
+        <form action="#" method="post" id="form">
+            <div id="div-textarea">
+                <label for="msg">Mon message : </label><br>
+                <textarea name="msg" id="msg" cols="35" rows="15" maxlength="300" placeholder="Veuillez écrire votre message"></textarea>
+                <button type="submit" id="btn">Envoyer</button>
             </div>
+        </form>
+    </div>
 
-            <div id="container-btn">
-                <form action="#" method="post" id="form">
-                    <div id="div-textarea">
-                        <label for="msg">Mon message : </label><br>
-                        <textarea name="msg" id="msg" cols="35" rows="15" maxlength="300" placeholder="Veuillez écrire votre message"></textarea>
-                        <button type="submit" id="btn">Envoyer</button>
-                    </div>
-                </form>
-            </div>
-
-            <script src="../others/js/ajax.js"></script>
-            <script src="../others/js/getMessage.js"></script>
-            <script src="../others/js/sendMessage.js"></script>
-        <?php } else {
-            header("Location: home.php");
-        }
-        ?>
-    </body>
-
-    </html>
+    <script src="others/js/getMessage.js"></script>
+    <script src="others/js/sendMessage.js"></script>
+    <script src="others/js/deconnect.js"></script>
+<?php } else {
+    header("Location: index.php");
+}
+$page = ob_get_clean();
+?>

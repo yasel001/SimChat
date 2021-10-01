@@ -83,3 +83,10 @@ function inscription()
         http_response_code(200);
     }
 }
+
+
+function deconnexion()
+{
+    session_destroy();
+    setcookie("isConnected", false);
+}
