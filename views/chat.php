@@ -5,7 +5,7 @@ if (isset($_COOKIE['isConnected'])) { ?>
     <div>
         <div class="tools espace-bas-blanc">
             <?= $_SESSION["pseudo"]; ?>
-            <button id="btnDeconnect">Se deconnecter</button>
+            <button id="btnDeconnect" class="btn btn-danger">Se deconnecter</button>
         </div>
 
         <br><br>
@@ -17,10 +17,10 @@ if (isset($_COOKIE['isConnected'])) { ?>
 
     <div id="container-btn">
         <form action="#" method="post" id="form">
-            <div id="div-textarea">
-                <label for="msg">Mon message : </label><br>
-                <textarea name="msg" id="msg" cols="35" rows="15" maxlength="300" placeholder="Veuillez écrire votre message"></textarea>
-                <button type="submit" id="btn">Envoyer</button>
+            <div class="form-floating mb-3">
+                <textarea class="form-control" name="msg" id="msg" style="height: 250px" maxlength="300" placeholder="Mon message"></textarea>
+                <label for="msg">Mon message</label>
+                <button type="submit" id="btn" class="btn btn-success">Envoyer</button>
             </div>
         </form>
     </div>

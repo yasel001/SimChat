@@ -15,7 +15,7 @@ function callbackRecup(response) {
     .reverse()
     .map(function (message) {
       return `
-        <div class="message espace-bas-blanc">
+        <div class="espace-bas-blanc border border-2 border-secondary rounded-2">
         <span class="author">${message["pseudo"]}: </span>
             ${message["message"]}
         </div>

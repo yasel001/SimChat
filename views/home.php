@@ -3,44 +3,46 @@
     if (!isset($_COOKIE['isConnected'])) { ?>
         <div class="container container-accueil">
             <div class="connexion">
-                <button id="connexion">Connexion</button>
+                <button id="connexion" class=".bg-light">Connexion</button>
 
                 <div class="form-connexion">
                     <form action="#" method="post">
-                        <div>
-                            <label for="pseudoConnexion">Pseudo : </label>
-                            <input type="text" name="pseudoConnexion" id="pseudoConnexion">
+                        <div class="form-floating mb-6">
+                            <input type="text" class="form-control" name="pseudoConnexion" id="pseudoConnexion" placeholder="Pseudo">
+                            <label for="pseudoConnexion">Pseudo</label>
+                        </div>
+                        <div class="form-floating mb-6">
+                            <input type="password" class="form-control" name="passConnexion" id="passConnexion" placeholder="Mot de passe">
+                            <label for="passConnexion">Mot de passe</label>
                         </div>
                         <div>
-                            <label for="passConnexion">Mot de passe : </label>
-                            <input type="password" name="passConnexion" id="passConnexion">
-                        </div>
-                        <div>
-                            <button type="submit">Me connecter</button>
+                            <button type="submit" class="btn btn-dark">Me connecter</button>
                         </div>
                     </form>
                 </div>
             </div>
 
             <div class="inscription">
-                <button id="inscription">Inscription</button>
+                <button id="inscription" class=".bg-light">Inscription</button>
 
                 <div class="form-inscription">
                     <form action="#" method="post">
-                        <div>
-                            <label for="pseudoInscription">Pseudo : </label>
-                            <input type="text" name="pseudoInscription" id="pseudoInscription">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="pseudoInscription" id="pseudoInscription" placeholder="Pseudo">
+                            <label for="pseudoInscription">Pseudo</label>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col form-floating mb-3">
+                                <input type="password" class="form-control" name="passInscription" id="passInscription" placeholder="Mot de passe">
+                                <label for="passInscription">Mot de passe</label>
+                            </div>
+                            <div class="col form-floating mb-3">
+                                <input type="password" class="form-control" name="passConfirmInscription" id="passConfirmInscription" placeholder="Confirmation mot de passe">
+                                <label for="passConfirmInscription">Confirmation mot de passe</label>
+                            </div>
                         </div>
                         <div>
-                            <label for="passInscription">Mot de passe : </label>
-                            <input type="password" name="passInscription" id="passInscription">
-                        </div>
-                        <div>
-                            <label for="passConfirmInscription">Confirmation mot de passe : </label>
-                            <input type="password" name="passConfirmInscription" id="passConfirmInscription">
-                        </div>
-                        <div>
-                            <button type="submit">M'inscrire</button>
+                            <button type="submit" class="btn btn-dark">M'inscrire</button>
                         </div>
                     </form>
                 </div>
