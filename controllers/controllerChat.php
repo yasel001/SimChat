@@ -30,7 +30,9 @@ function recupMessages()
 {
     global $db;
     $msgManager = new MessageManager($db);
-    $listMessage = json_encode($msgManager->getMessages());
+
+    $messages = $msgManager->getMessages();
+    $listMessage = json_encode($messages);
 
     echo $listMessage;
     http_response_code(200);

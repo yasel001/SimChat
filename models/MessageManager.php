@@ -10,7 +10,7 @@ class MessageManager
 
     public function getMessages()
     {
-        $query = "SELECT pseudo, message FROM message ORDER BY id DESC LIMIT 10";
+        $query = "SELECT pseudo, message, date_format(date, '%d/%m/%Y %T') as 'date' FROM message ORDER BY id DESC LIMIT 10";
 
         $request = $this->connection->prepare($query);
         $request->execute();

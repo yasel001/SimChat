@@ -16,8 +16,10 @@ function callbackRecup(response) {
     .map(function (message) {
       return `
         <div class="espace-bas-blanc border border-2 border-secondary rounded-2">
-        <span class="author">${message["pseudo"]}: </span>
-            ${message["message"]}
+          <span class="author">${message["pseudo"]}: </span>
+              ${message["message"]}
+          <span class="date"><sub>${message["date"]}</sub></span>
+              
         </div>
 
 
@@ -27,7 +29,6 @@ function callbackRecup(response) {
 
   const blocMessages = document.querySelector("#container");
   blocMessages.innerHTML = html;
-  // window.scroll(0, 10000);
 }
 
 setInterval(() => {

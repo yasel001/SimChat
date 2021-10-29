@@ -52,8 +52,13 @@ input {
   padding: 2%;
 }
 
-.author {
+.author,
+.date {
   font-weight: bold;
+}
+
+.date {
+  float: right;
 }
 
 .espace-bas-blanc {
